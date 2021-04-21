@@ -2,7 +2,7 @@
 
 
 <p align="center">
-    <img alt="podcastr" src="public/images/favicon.png" width="70%">
+    <img alt="podcastr" src=".github/logo.svg" width="70%">
 </p>
 
 
