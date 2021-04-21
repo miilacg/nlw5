@@ -2,7 +2,7 @@
 
 
 <p align="center">
-    <img alt="dev.finances" src="./public/images/logo.svg" width="70%">
+    <img alt="logo podcastr" src="public/images/logo.svg" width="70%">
 </p>
 
 
@@ -16,7 +16,6 @@ Ele é um site onde um único podcast pode liberar os últimos lançamentos do p
 Esse projeto foi desenvolvido durante a trilha de React, na quinta edição da NLW.
 
 
-----------------------------------------------------------------------------------------------
 
 
 
@@ -30,8 +29,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - SCSS
 
 
-----------------------------------------------------------------------------------------------
-
 
  
 ## 🚀 Para executar:
@@ -41,8 +38,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 * Inicie o projeto com yarn dev
 
 
-----------------------------------------------------------------------------------------------
-
 
 
 ## 🔖 Layout
@@ -51,8 +46,6 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 
 
 
-----------------------------------------------------------------------------------------------
 
 
-
-Esse projeto foi feito durante a NLW#5 da [Rocketseat](https://rocketseat.com.br/)
+<div align="center">Esse projeto foi feito durante a NLW#5 da [Rocketseat](https://rocketseat.com.br/)</div>
