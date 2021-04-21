@@ -2,7 +2,7 @@
 
 
 <p align="center">
-    <img alt="logo podcastr" src="public/images/logo.svg" width="70%">
+    <img alt="podcastr" src="public/images/favicon.png" width="70%">
 </p>
 
 
@@ -43,6 +43,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## 🔖 Layout
 
 Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/UwFEntsHpHYJlHNQAQr4gA/Podcastr?node-id=160%3A2761). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
+
+
 
 
 
