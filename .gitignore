@@ -1,0 +1,11 @@
+# arquivos de estudo
+**anotacoes.txt
+**explicacoes.*
+
+# dependencies
+**/node_modules
+
+# next.js
+**/.next/
+**/out/
+
