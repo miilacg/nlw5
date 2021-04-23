@@ -2,7 +2,7 @@
 
 
 <p align="center">
-    <img alt="podcastr" src=".github/logo.svg" width="70%">
+    <img alt="podcastr" src=".github/logo.svg" width="50%">
 </p>
 
 
@@ -26,7 +26,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - ReactJS
 - Typescript
 - Next.js
-- SCSS
+- SASS
 
 
 
