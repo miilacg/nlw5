@@ -3,7 +3,6 @@ import { ptBR } from 'date-fns/locale';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import Player from '../../components/Player';
 import { api } from '../../services/api';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 
@@ -27,7 +26,7 @@ type EpisodeProps = {
 
 
 
-export default function Episode({ episode }: EpisodeProps) {
+export default function Episode({ episode }: EpisodeProps) {  
   return (
     <div className={ styles.episode }>
       {/*<head>
@@ -67,10 +66,28 @@ export default function Episode({ episode }: EpisodeProps) {
 
 
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [],
-    fallback: 'blocking'
+// usar toda vez que tiver gerando de forma dinamina uma página estatica, ou seja, uma página estatica que tem paramentros 
+export const getStaticPaths: GetStaticPaths = async () => { //toda rota que tiver [] vai precisar informar esse metodo
+  const { data } = await api.get('episodes', { // coloca de forma estatica os dois primeiros episodios
+    params: {
+      _limit: 2,
+      _sort: 'published_at',
+      _order: 'desc'
+    }
+  }) 
+
+  const paths = data.map(episode => {
+    return {
+      params: {
+        slug: episode.id
+      }
+    }
+  })
+
+  return { //retorna os episodios que eu quero gerar de forma estatica no momento da build
+    //é uma boa colocar aqui as categorias mais acessadas
+    paths, //paths: [], => se tiver vazio eu não quero retornar nenhum episodio nesse momento
+    fallback: 'blocking' //roda no node, então quando a pessoa clicar no link ela só vai ser levada para ele quando ele já estiver carregado
   }
 }
 

@@ -1,10 +1,13 @@
+import { useContext } from 'react';
 import { GetStaticProps } from 'next'; // tipagem (dos parametros) e do retorno da função getStaticProps
 import Image from 'next/image'; //usar para otimizar a imagem
 import Link from 'next/link'; //muda só o que precisa ao inves de recarregar tudo
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
+
 import { api } from '../services/api';
 import { convertDurationToTimeString } from '../utils/convertDurationToTimeString';
+import { PlayerContext } from '../contexts/PlayerContext';
 
 import styles from './home.module.scss';
 
@@ -26,6 +29,8 @@ type HomeProps = { //propriedades que o componente Home recebe (pode ser feito c
 }
 
 export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
+  const { play } = useContext(PlayerContext);
+
   return (
     <div className={ styles.homepage }>
       <section className={ styles.latestEpisodes }>
@@ -52,7 +57,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                   <span>{ episode.durationAsString }</span>
                 </div>
 
-                <button type="button">
+                <button type="button" onClick={() => play(episode)}> {/* tem que fazer dessa forma quando a função tiver parametros */}
                   <img src="/images/play-green.svg" alt="Tocas episodio" />
                 </button>
               </li>

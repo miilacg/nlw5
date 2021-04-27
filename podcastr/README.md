@@ -2,7 +2,7 @@
 
 
 <p align="center">
-    <img alt="podcastr" src=".github/logo.svg" width="50%">
+    <img alt="podcastr" src="public/images/logo.svg" width="50%">
 </p>
 
 
@@ -12,9 +12,6 @@
 
 Podcastr é uma plataforma para ouvirmos nossos podcasts.
 Ele é um site onde um único podcast pode liberar os últimos lançamentos do podcast.
-
-Esse projeto foi desenvolvido durante a trilha de React, na quinta edição da NLW.
-
 
 
 
@@ -53,4 +50,4 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 
 -----------------------------------------------------------------
 
-<div align="center">Esse projeto foi feito durante a NLW#5 da [Rocketseat](https://rocketseat.com.br/)</div>
+<div align="center">Esse projeto foi feito durante a trilha de ReactJS da NLW#5 da [Rocketseat](https://rocketseat.com.br/).</div>
