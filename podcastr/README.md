@@ -50,4 +50,4 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 
 -----------------------------------------------------------------
 
-<div align="center">Esse projeto foi feito durante a trilha de ReactJS da NLW#5 da Rocketseat.</div>
+<div align="center">Esse projeto foi feito durante a trilha de ReactJS da NLW#5 da [Rocketseat](https://rocketseat.com.br/).</div>
