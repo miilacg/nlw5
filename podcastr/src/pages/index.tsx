@@ -1,13 +1,13 @@
-import { useContext } from 'react';
 import { GetStaticProps } from 'next'; // tipagem (dos parametros) e do retorno da função getStaticProps
 import Image from 'next/image'; //usar para otimizar a imagem
+import Head from 'next/head';
 import Link from 'next/link'; //muda só o que precisa ao inves de recarregar tudo
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 
 import { api } from '../services/api';
 import { convertDurationToTimeString } from '../utils/convertDurationToTimeString';
-import { PlayerContext } from '../contexts/PlayerContext';
+import { usePlayer } from '../contexts/PlayerContext';
 
 import styles from './home.module.scss';
 
@@ -29,15 +29,21 @@ type HomeProps = { //propriedades que o componente Home recebe (pode ser feito c
 }
 
 export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
-  const { play } = useContext(PlayerContext);
+  const { playList } = usePlayer();
+
+  const episodeList = [...latestEpisodes, ...allEpisodes];
 
   return (
     <div className={ styles.homepage }>
+      <Head>
+        <title>Home | Podcastr</title>
+      </Head>
+      
       <section className={ styles.latestEpisodes }>
         <h2>Últimos lançamentos</h2>
 
         <ul>
-          { latestEpisodes.map(episode => { //para cada episodio eu vou retornar uma coisa
+          { latestEpisodes.map((episode, index) => { //para cada episodio eu vou retornar uma coisa
             return (
               <li key={ episode.id }>
                 <Image
@@ -57,7 +63,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                   <span>{ episode.durationAsString }</span>
                 </div>
 
-                <button type="button" onClick={() => play(episode)}> {/* tem que fazer dessa forma quando a função tiver parametros */}
+                <button type="button" onClick={() => playList(episodeList, index)}> {/* tem que fazer dessa forma quando a função tiver parametros */}
                   <img src="/images/play-green.svg" alt="Tocas episodio" />
                 </button>
               </li>
@@ -107,7 +113,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                       { episode.durationAsString }
                     </td>
                     <td>
-                      <button type="button">
+                      <button type="button" onClick={() => playList(episodeList, index + latestEpisodes.length)}> {/* soma pro primeiro item ser a partir do item que eu clicar*/}
                         <img src="/images/play-green.svg" alt="Tocar episódio"/>
                       </button>
                     </td>
