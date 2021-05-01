@@ -2,7 +2,7 @@
 
 
 <p align="center">
-    <img alt="podcastr" src="assets/splash-git.png" width="50%">
+    <img alt="Plant Manager" src="assets/logo-git.png" width="50%">
 </p>
 
 
@@ -10,7 +10,7 @@
 
 ## 💻 Projeto
 
-Plant Manager app para ajudar as pessoas a lembrarem de cuidar das plantas.
+Plant Manager é um app para ajudar as pessoas a lembrarem de cuidar das plantas.
 
 
 
@@ -22,6 +22,22 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Expo
 - React Native
 - Typescript
+
+
+
+
+## 🚀 Para executar:
+
+### Requisitos
+
+- Você vai precisar instalar [Yarn](https://yarnpkg.com/) e o Expo (yarn global add expo-cli) no seu projeto.
+
+* Clone o projeto
+* Instale as dependências com yarn
+* Inicie o projeto com expo start
+
+
+O aplicativo estará disponível para acesso em `http://localhost:19002`
 
 
 
