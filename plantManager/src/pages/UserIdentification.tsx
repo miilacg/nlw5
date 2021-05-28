@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
-import { SafeAreaView, StyleSheet, View, Text, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
+import { SafeAreaView, 
+         StyleSheet, 
+         View, 
+         Text, 
+         TextInput, 
+         KeyboardAvoidingView, 
+         Platform, 
+         TouchableWithoutFeedback, 
+         Keyboard
+       } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 
 import { Button } from '../components/Button';
@@ -41,8 +50,9 @@ export function UserIdentification() {
         style={ styles.container }
         behavior={ Platform.OS === 'ios' ? 'padding' : 'height' }
       >
+        <TouchableWithoutFeedback onPress={ Keyboard.dismiss }>
 
-        <View style={ styles.content }>
+          <View style={ styles.content }>
           <View style={ styles.form }>
             <View style={ styles.header }>
               <Text style={ styles.emoji }>
@@ -68,6 +78,7 @@ export function UserIdentification() {
 
           </View>    
         </View> 
+        </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
     </SafeAreaView>
   )
