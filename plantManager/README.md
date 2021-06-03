@@ -34,7 +34,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 * Clone o projeto
 * Instale as dependências com yarn
-* Inicie o projeto com expo start
+* Inicie o projeto com expo start e yarn json-server ./src/services/server.json --host IP DA MAQUINA --port 3333
 
 
 O aplicativo estará disponível para acesso em `http://localhost:19002`
