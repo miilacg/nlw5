@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View, Image, Text, FlatList } from 'react-native';
+import { StyleSheet, View, Image, Text, FlatList, Alert } from 'react-native';
 import { formatDistance } from 'date-fns';
 import { pt } from 'date-fns/locale';
 
@@ -7,7 +7,7 @@ import { Header } from '../components/Header';
 import { PlantCardSecondary } from '../components/PlantCardSecondary';
 import { Load } from '../components/Load';
 
-import { loadPlant, PlantProps } from '../libs/storage';
+import { loadPlant, PlantProps, removePlants } from '../libs/storage';
 import waterdrop from '../assets/waterdrop.png';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
@@ -18,6 +18,29 @@ export function MyPlants() {
 	const [myPlants, setMyPlants] = useState<PlantProps[]>([]);
 	const [loading, setLoading] = useState(true);
 	const [nextWatered, setNextWatered] = useState<string>();
+
+	function handleRemove(plant: PlantProps) {
+		Alert.alert('Remover', `Deseja remover ${plant.name}?`, [
+			{
+				text: 'Não 🙏',
+				style: 'cancel'
+			},
+			{
+				text: 'Sim 😢',
+				onPress: async () => {
+					try {
+						await removePlants(plant.id);
+						setMyPlants((oldData) =>
+							oldData.filter((item) => item.id != plant.id)
+						);
+
+					} catch (error) {
+						Alert.alert('Não foi possível remover! 😢')
+					}
+				}
+			}
+		]);
+	}
 
 	useEffect(() => {
 		async function loadStorageData() {
@@ -41,7 +64,10 @@ export function MyPlants() {
 	}, []);
 
 
-	if (loading) return <Load />;
+
+	if(loading){
+    return <Load />
+  }
 
 	return (
 		<View style={ styles.container }>
@@ -67,15 +93,16 @@ export function MyPlants() {
 					renderItem={({ item }) => (
 						<PlantCardSecondary 
 							data={ item }
+							handleRemove={() => { handleRemove(item) }}
 						/>
 					)}
 					showsVerticalScrollIndicator={ false }
-					//contentContainerStyle={{ flex: 1 }}
 				/>				
 			</View>
 		</View>
 	)
 } 
+
 
 const styles = StyleSheet.create({
 	container: {
@@ -119,4 +146,4 @@ const styles = StyleSheet.create({
 		color: colors.heading,
 		marginVertical: 20
 	}
-})
+});
