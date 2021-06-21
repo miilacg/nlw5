@@ -1,4 +1,4 @@
-## Podcastr
+## PlatManager
 
 
 <p align="center">
@@ -10,7 +10,7 @@
 
 ## 💻 Projeto
 
-Plant Manager é um app para ajudar as pessoas a lembrarem de cuidar das plantas.
+Aplicativo para lhe ajudar a lembrar de cuidar de suas plantas de forma fácil de acordo com cada tipo de plantinha.
 
 
 
@@ -35,6 +35,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 * Clone o projeto
 * Instale as dependências com yarn
 * Inicie o projeto com expo start
+* Inicie a fake api com json-server ./src/services server.json --host SEU IP LOCAL --port 3333 --delay 700. 
 
 
 O aplicativo estará disponível para acesso em `http://localhost:19002`
