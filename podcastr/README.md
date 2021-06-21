@@ -10,8 +10,7 @@
 
 ## 💻 Projeto
 
-Podcastr é uma plataforma para ouvirmos nossos podcasts.
-Ele é um site onde um único podcast pode liberar os últimos lançamentos do podcast.
+Podcastr é uma plataforma para reprodução de episódios do seu podcast favorito.
 
 
 
@@ -35,7 +34,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 * Clone o projeto
 * Instale as dependências com yarn
-* Inicie o projeto com yarn dev (para utilizar em modo de desenvolvimento)
+* Inicie o servidor com yarn dev
+* Inicie a fake api com yarn server
 
 
 O aplicativo estará disponível para acesso em `http://localhost:3000`
